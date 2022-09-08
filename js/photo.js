@@ -227,7 +227,6 @@ var mouse = {
 }
 document.onmousemove = function(e)
 {
-	
 	if (window.event) e = window.event;
 	mouse.x = e.clientX;
 	mouse.y = e.clientY;
