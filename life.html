@@ -69,12 +69,18 @@
         <!-- 主体内容 -->
         <div class="top">
             <div class="container" id="top_container">
-                <h1 id="title_text">清风の生活分享</h1>
+                <div class="top_menu_btn" id="top_menu_btn" style="margin-top: 15px; padding: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-heading" viewBox="0 0 16 16">
+                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                        <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z"/>
+                    </svg>
+                </div>
+                <h1 class="col-12" id="title_text">清风の生活分享</h1>
             </div>
         </div>
         <main id="main" class="main">
             <div class="container" id="container">
-                <div class="col-3 left_menu">
+                <div class="col-3 left_menu" id="left_menu_p">
                     <div id="left_menu ">
                         <div class="icon col-12">
                             <img  id="icon" src="http://qlogo1.store.qq.com/qzone/2758534648/2758534648/100"></img>
@@ -86,14 +92,15 @@
                                 <li class="bt">美食</li>
                                 <li class="bt">游戏</li>
                                 <li class="bt">学习</li>
+                                <li class="write">分享文章</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-9 right_main">
-                    <div id="right_main" class="list">
+                <div class="col-9 right_main" id="right_main_p">
+                    <div id="right_main" class="main_list">
                         <!-- 趣事 -->
-                        <ul class="list-group" id="fun_list">
+                        <ul class="list-group list" id="fun_list">
                             <p id="fun_text">&nbsp; 趣事</p>
                             <li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
                                 <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
@@ -117,7 +124,7 @@
                             </li>
                         </ul>
                         <!-- 美食 -->
-                        <ul class="list-group" id="food_list">
+                        <ul class="list-group list" id="food_list">
                             <p id="food_text">&nbsp; 美食</p>
                             <li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
                                 <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
@@ -141,7 +148,7 @@
                             </li>
                         </ul>
                         <!-- 游戏 -->
-                        <ul class="list-group" id="game_list">
+                        <ul class="list-group list" id="game_list">
                             <p id="game_text">&nbsp; 游戏</p>
                             <li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
                                 <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
@@ -165,7 +172,7 @@
                             </li>
                         </ul>
                         <!-- 学习 -->
-                        <ul class="list-group" id="learn_list">
+                        <ul class="list-group list" id="learn_list">
                             <p id="learn_text">&nbsp; 学习</p>
                             <li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
                                 <div class="card col-12" style="background: rgb(0 0 0 / 0%)">

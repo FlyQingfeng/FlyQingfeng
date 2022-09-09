@@ -84,12 +84,99 @@ window.addEventListener('load', function () {
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
 }, 3000);
+
+
+//屏蔽右键
+document.oncontextmenu = function () {
+    iziToast.show({
+        timeout: 2000,
+        icon: "fa-solid fa-circle-exclamation",
+        message: '为了浏览体验，本站禁用右键'
+    });
+    return false;
+}
+
 //设置默认页面
 $(".list ul").eq(0).show().siblings().hide();
-// 页面切换
-$(function () {
-    $('.list_bt li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-        $(".list ul").eq($(this).index()).show().siblings().hide();
+$('#top_menu_btn').hide();//隐藏顶部按钮
+
+//监听网页宽度
+let is_sm=false;
+window.addEventListener('load', function () {
+    window.addEventListener('resize', function () {
+        //获取网页宽度
+        webWidth=window.innerWidth;
+        //关闭移动端样式
+        if (window.innerWidth >= 600) {
+            $('#left_menu_p').css({
+                "width": "25%"
+            });
+            $('#name_text').show();
+            $('#top_menu_btn').hide();
+            is_sm=false;
+        } //启用移动端样式
+        if (window.innerWidth <= 990) {
+            $('#top_menu_btn').show();
+            is_sm=true;
+            $('#left_menu_p').css({
+                "width": "0%"
+            });
+            $('#name_text').hide();
+
+        }
     })
+})
+
+//移动端菜单打开
+function left_menu_open() {
+    $('#left_menu_p').css({
+        "width": "100%"
+    });
+    $('#name_text').show();
+}
+//移动端菜单关闭
+function left_menu_off() {
+    $('#left_menu_p').css({
+        "width": "0%"
+    });
+    $('#name_text').hide();
+}
+
+
+
+$(function () {
+    let is_left_menu_show=false;
+    // 页面切换
+    $('.list_bt .bt').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $(".main_list ul").eq($(this).index()).show().siblings().hide();
+        if (is_sm) {
+            left_menu_off();
+            is_left_menu_show=false;
+        }
+    })
+    //分享内容
+    $('.list_bt .write').click(function () {
+        iziToast.show({
+            timeout: 2000,
+            icon: "fa-solid fa-circle-exclamation",
+            message: '暂时不能写入内容'
+        });
+        if (is_sm) {
+            left_menu_off();
+            is_left_menu_show=false;
+        }
+    })
+    //顶部菜单打开菜单
+    $('#top_menu_btn').click(function () {
+        if (is_left_menu_show) {
+            //默认时
+            left_menu_off();
+            is_left_menu_show=false;
+        } else {
+            //点击后
+            left_menu_open();
+            is_left_menu_show=true;
+        }
+    });
 })

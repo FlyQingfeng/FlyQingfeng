@@ -264,7 +264,7 @@ $("#telegram").mouseover(function () {
 let myDate = new Date;
 let mon = myDate.getMonth() + 1;
 let date = myDate.getDate();
-let days = [];//['4.4', '5.12', '7.7', '9.9', '9.18', '12.13'];//暂时不用变成灰色
+let days = ['4.4', '5.12', '7.7', '9.9', '9.18', '12.13'];//暂时不用变成灰色
 if(mon==2&&date==10){//生日 
     document.write(
         '<style>html{}</style>'
