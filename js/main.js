@@ -264,7 +264,7 @@ $("#telegram").mouseover(function () {
 let myDate = new Date;
 let mon = myDate.getMonth() + 1;
 let date = myDate.getDate();
-let days = ['4.4', '5.12', '7.7', '9.9', '9.18', '12.13'];
+let days = [];//['4.4', '5.12', '7.7', '9.9', '9.18', '12.13'];//暂时不用变成灰色
 if(mon==2&&date==10){//生日 
     document.write(
         '<style>html{}</style>'
@@ -272,7 +272,7 @@ if(mon==2&&date==10){//生日
     $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
     $("#change1").html("今天是我的生日，感谢大家浏览");
 }
-for (let day of days) {
+for (let day of days) {//国家纪念日
     let d = day.split('.');
     if (mon == d[0] && date == d[1]) {
         document.write(
