@@ -1124,3 +1124,9 @@ footer {
     height: 100%;
     overflow-y: auto;
 }
+#fun_list{
+    visibility:visible;
+}
+#food_list{
+    visibility:visible;
+}

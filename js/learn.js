@@ -70,7 +70,7 @@ window.addEventListener('load', function () {
             timeout: 2500,
             icon: false,
             title: hello,
-            message: '这里是清风的生活分享'
+            message: '这里是清风的学习园地'
         });
     }, 800);
 
@@ -84,12 +84,5 @@ window.addEventListener('load', function () {
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
 }, 3000);
-//设置默认页面
-$(".list ul").eq(0).show().siblings().hide();
-// 页面切换
-$(function () {
-    $('.list_bt li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-        $(".list ul").eq($(this).index()).show().siblings().hide();
-    })
-})
+
+
