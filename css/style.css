@@ -1098,7 +1098,7 @@ footer {
     font-size:23px;
     box-shadow:0px 5px 5px 5px #000;
 }
-.left_menu2 .list_bt {
+.left_menu2 ul {
     list-style:none;/* 去掉ul前面的符号 */
     margin: 0px; 
     padding: 0px;
