@@ -155,13 +155,154 @@ function getFile(path) {
     return temp_str;
 }
 function updateWeb() {
-    //目前还不会做动态更新列表
-    
-    // let count = document.getElementById('#right_main').childElementCount;
-    // let right_main_uls = document.getElementById('#right_main').children;
-    // for (let i = 0; i < count; i++) {
+    let life_list_data = [{
+        "type": "fun",
+        "data": [
+            {
+                "img": "./img/background1.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }, {
+                "img": "./img/background2.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    }, {
+        "type": "food",
+        "data": [
+            {
+                "img": "./img/background3.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }, {
+                "img": "./img/background4.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    }, {
+        "type": "game",
+        "data": [
+            {
+                "img": "./img/background5.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }, {
+                "img": "./img/background6.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    }, {
+        "type": "learn",
+        "data": [
+            {
+                "img": "./img/background7.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }, {
+                "img": "./img/background8.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    }]
+    //趣事列表数据
+    let fun_list_data = [];
+    //美食列表数据
+    let food_list_data = [];
+    //游戏列表数据
+    let game_list_data = [];
+    //学习列表数据
+    let learn_list_data = [];
 
-    // }
+    life_list_data.map((e)=>{
+        switch (e.type) {
+            case "fun":
+                fun_list_data=e.data;
+                break;
+            case "food":
+                food_list_data=e.data;
+                break;
+            case "game":
+                game_list_data=e.data;
+                break;
+            case "learn":
+                learn_list_data=e.data;
+                break;
+            default:
+                break;
+        }
+    });
+    
+    var new_fun_list_data = fun_list_data.map((e) => {
+        return `<li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
+        <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
+        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${e.title}</h5>
+          <p class="card-text">${e.content}</p>
+          <a href="${e.more}" class="btn btn-primary">更多</a>
+        </div>
+      </div>
+    </li>`
+    })
+    var new_food_list_data = food_list_data.map((e) => {
+        return `<li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
+        <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
+        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${e.title}</h5>
+          <p class="card-text">${e.content}</p>
+          <a href="${e.more}" class="btn btn-primary">更多</a>
+        </div>
+      </div>
+    </li>`
+    })
+    var new_game_list_data = game_list_data.map((e) => {
+        return `<li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
+        <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
+        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${e.title}</h5>
+          <p class="card-text">${e.content}</p>
+          <a href="${e.more}" class="btn btn-primary">更多</a>
+        </div>
+      </div>
+    </li>`
+    })
+    var new_learn_list_data = learn_list_data.map((e) => {
+        return `<li class="list-group-item" style="background: rgb(0 0 0 / 0%)">
+        <div class="card col-12" style="background: rgb(0 0 0 / 0%)">
+        <img src="${e.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${e.title}</h5>
+          <p class="card-text">${e.content}</p>
+          <a href="${e.more}" class="btn btn-primary">更多</a>
+        </div>
+      </div>
+    </li>`
+    })
+    var learn_list = document.querySelector(`#learn_list`);
+    learn_list.innerHTML = new_learn_list_data.join("");
+
+    var game_list = document.querySelector(`#game_list`);
+    game_list.innerHTML = new_game_list_data.join("");
+
+    var food_list = document.querySelector(`#food_list`);
+    food_list.innerHTML = new_food_list_data.join("");
+
+    var fun_list = document.querySelector(`#fun_list`);
+    fun_list.innerHTML = new_fun_list_data.join("");
 }
 
 $(function () {

@@ -1,12 +1,70 @@
-{
-    "fun":[
-        {
-            "nub":1,
-            "img":"",
-            "title":"",
-            "content":"",
-            "more":""
-        }
-    ]
-    
-}
+[
+    {
+        "type": "fun",
+        "data": [
+            {
+                "img": "./img/background1.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            },
+            {
+                "img": "./img/background2.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    },
+    {
+        "type": "food",
+        "data": [
+            {
+                "img": "./img/background3.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            },
+            {
+                "img": "./img/background4.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    },
+    {
+        "type": "game",
+        "data": [
+            {
+                "img": "./img/background5.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            },
+            {
+                "img": "./img/background6.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    },
+    {
+        "type": "learn",
+        "data": [
+            {
+                "img": "./img/background7.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            },
+            {
+                "img": "./img/background8.webp",
+                "title": "标题",
+                "content": "内容",
+                "more": "#"
+            }
+        ]
+    }
+]
