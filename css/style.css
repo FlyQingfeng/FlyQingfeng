@@ -520,6 +520,14 @@ span.time-text {
     font-family: 'UnidreamLED' !important;
 }
 
+span.countdown-time-text{
+    color: rgb(255, 0, 0);
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-family: 'UnidreamLED' !important;
+}
+
+
 .weather {
     display: flex;
     flex-direction: row;

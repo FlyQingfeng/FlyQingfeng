@@ -61,6 +61,18 @@ function init_life_time() {
         if(day==0){
             //生日当天的事件
         }
+        
+        /* 跨年倒计时 */
+        let countdown=new Date((year+1)+'-1-1 00:00:00');
+        //获取当前的时间
+        let dt=countdown.getTime()-ntime.getTime();
+        //总差进行换算
+        let countdown_day = parseInt(dt / (1000 * 60 * 60 * 24));
+        let countdown_hour=parseInt((dt % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let countdown_min=parseInt((dt % (1000 * 60 * 60)) / (1000 * 60));
+        let countdown_sec=parseInt((dt % (1000 * 60)) / 1000);
+        $('#countdown_card #countdown #countdown-time-text').html(countdown_day+'天'+countdown_hour+'时'+countdown_min+'分'+countdown_sec+'秒');
+        
     }
     getAsideLifeTime();
     setInterval(() => {

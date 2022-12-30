@@ -28,29 +28,9 @@ let bg_img_preinstall = {
     "4": "https://api.ixiaowai.cn/api/api.php" // 随机动漫
 };
 
-// 更改背景图片
-function setBgImgInit() {
-    let bg_img = getBgImg();
-    $("input[name='wallpaper-type'][value=" + bg_img["type"] + "]").click();
-    switch (bg_img["type"]) {
-        case "1":
-            $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 21)}.webp`) //随机默认壁纸
-            break;
-        case "2":
-            $('#bg').attr('src', bg_img_preinstall[2]); //必应每日
-            break;
-        case "3":
-            $('#bg').attr('src', bg_img_preinstall[3]); //随机风景
-            break;
-        case "4":
-            $('#bg').attr('src', bg_img_preinstall[4]); //随机动漫
-            break;
-    }
-};
+
 
 $(document).ready(function () {
-    // 壁纸数据加载
-    setBgImgInit();
     // 设置背景图片
     $("#wallpaper").on("click", ".set-wallpaper", function () {
         let type = $(this).val();

@@ -37,12 +37,12 @@ body.addEventListener('mousemove', (e) => {
 
 //加载完成后执行
 window.addEventListener('load', function () {
-
     //载入动画
     $('#loading-box').attr('class', 'loaded');
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
     $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
     $('#section').css("cssText", "transform: scale(1) !important;opacity: 1 !important;filter: blur(0px) !important");
+    
     //用户欢迎
     setTimeout(function () {
         iziToast.show({
@@ -198,6 +198,7 @@ function time() {
         s = "0" + s;
     }
     $("#time").html(y + "&nbsp;年&nbsp;" + mm + "&nbsp;月&nbsp;" + d + "&nbsp;日&nbsp;" + "<span class='weekday'>" + weekday[day] + "</span><br>" + "<span class='time-text'>" + h + ":" + m + ":" + s + "</span>");
+    
     t = setTimeout(time, 1000);
 }
 
@@ -260,7 +261,7 @@ if(mon==2&&date==10){//生日
     $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
     $("#change1").html("今天是我的生日，感谢大家浏览");
 }
-if((mon==12&&date==30)||(mon==12&&date==31)||(mon==1&&date==1)){//跨年
+if((mon==12&&date>=26)||(mon==1&&date<=1)){//跨年
     //新春灯笼 （ 需要时可取消注释 ）
     new_element=document.createElement("link");
     new_element.setAttribute("rel","stylesheet");
@@ -274,12 +275,28 @@ if((mon==12&&date==30)||(mon==12&&date==31)||(mon==1&&date==1)){//跨年
     document.write(
         '<style>html{}</style>'
     );
-    $("#change").html("芜湖");
-    $("#change1").html("跨年倒计时");
+    //跨年倒计时
+    $('#switchmore').html(`
+    <div class="des" id="des">
+        <i class="fa-solid fa-quote-left"></i>
+        <div class="des-title"><span id="change">芜湖~~</span><br /><span
+        id="change1">跨年倒计时：</span></div>
+        <i class="fa-solid fa-quote-right"></i>
+        </div>
+        <div class="time cards" id="countdown_card">
+        <div class="timeshow" id="countdown">
+        <span>距离${(new Date()).getFullYear()+1}年还有</span><br>
+        <span class="countdown-time-text" id="countdown-time-text">00天00时00分00秒</span>
+        </div>
+        </div>
+    `)
     //设置背景
-    $('#bg').attr('src', "./img/NewYearHappy.jpg") //随机默认壁纸
-    
+    $('#bg').attr('src', "./img/newYear/NewYearHappy2.jpg") //随机默认壁纸
+}else{//不是跨年随机壁纸
+    //随机背景
+    $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 21)}.webp`) //随机默认壁纸
 }
+
 for (let day of days) {//国家纪念日
     let d = day.split('.');
     if (mon == d[0] && date == d[1]) {
