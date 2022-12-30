@@ -84,7 +84,6 @@ a:hover {
     border-radius: 50%;
     z-index: 9999999;
 }
-
 /*背景*/
 .bg-all {
     z-index: -1;
@@ -184,7 +183,7 @@ main {
 }
 
 .main-img img:hover {
-    transform: rotate(360deg);
+    transform:scale(1.5);
 }
 
 .img-title {
