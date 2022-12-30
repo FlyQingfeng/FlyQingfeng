@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
     $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
     $('#section').css("cssText", "transform: scale(1) !important;opacity: 1 !important;filter: blur(0px) !important");
     //随机背景
-    $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 21)}.webp`) //随机默认壁纸
+    //$('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 21)}.webp`) //随机默认壁纸
     //用户欢迎
     setTimeout(function () {
         iziToast.show({

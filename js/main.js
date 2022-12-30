@@ -43,7 +43,6 @@ window.addEventListener('load', function () {
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");
     $('.cover').css("cssText", "opacity: 1;transition: ease 1.5s;");
     $('#section').css("cssText", "transform: scale(1) !important;opacity: 1 !important;filter: blur(0px) !important");
-
     //用户欢迎
     setTimeout(function () {
         iziToast.show({
@@ -79,17 +78,6 @@ setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
 }, 3000);
 
-//新春灯笼 （ 需要时可取消注释 ）
-new_element=document.createElement("link");
-new_element.setAttribute("rel","stylesheet");
-new_element.setAttribute("type","text/css");
-new_element.setAttribute("href","./css/lantern.css");
-document.body.appendChild(new_element);
-
-new_element=document.createElement("script");
-new_element.setAttribute("type","text/javascript");
-new_element.setAttribute("src","./js/lantern.js");
-document.body.appendChild(new_element);
 
 //获取一言
 fetch('https://v1.hitokoto.cn?max_length=24')
@@ -272,12 +260,25 @@ if(mon==2&&date==10){//生日
     $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
     $("#change1").html("今天是我的生日，感谢大家浏览");
 }
-if(mon==12&&date==30){//跨年
+if((mon==12&&date==30)||(mon==12&&date==31)||(mon==1&&date==1)){//跨年
+    //新春灯笼 （ 需要时可取消注释 ）
+    new_element=document.createElement("link");
+    new_element.setAttribute("rel","stylesheet");
+    new_element.setAttribute("type","text/css");
+    new_element.setAttribute("href","./css/lantern.css");
+    document.body.appendChild(new_element);
+    new_element=document.createElement("script");
+    new_element.setAttribute("type","text/javascript");
+    new_element.setAttribute("src","./js/lantern.js");
+    document.body.appendChild(new_element);
     document.write(
         '<style>html{}</style>'
     );
-    $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
-    $("#change1").html("今天是我的生日，感谢大家浏览");
+    $("#change").html("芜湖");
+    $("#change1").html("跨年倒计时");
+    //设置背景
+    $('#bg').attr('src', "./img/NewYearHappy.jpg") //随机默认壁纸
+    
 }
 for (let day of days) {//国家纪念日
     let d = day.split('.');
