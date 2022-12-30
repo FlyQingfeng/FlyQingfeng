@@ -272,6 +272,13 @@ if(mon==2&&date==10){//生日
     $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
     $("#change1").html("今天是我的生日，感谢大家浏览");
 }
+if(mon==12&&date==30){//跨年
+    document.write(
+        '<style>html{}</style>'
+    );
+    $("#change").html("qingfeng&nbsp;生日快乐&nbsp;!!");
+    $("#change1").html("今天是我的生日，感谢大家浏览");
+}
 for (let day of days) {//国家纪念日
     let d = day.split('.');
     if (mon == d[0] && date == d[1]) {
@@ -303,7 +310,7 @@ $('#switchmore').on('click', function () {
     } else {
         $('#container').attr('class', 'container');
         $("#change").html("qing&nbsp;feng&nbsp;!");
-        $("#change1").html("这个是清风的个人网页,嘿嘿");
+        $("#change1").html("这个是清风的个人网页");
     }
 });
 
