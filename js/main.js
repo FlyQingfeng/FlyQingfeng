@@ -386,6 +386,9 @@ window.addEventListener('load', function () {
             $("#menu").html("<i class='fa-solid fa-bars'></i>");
             //移除移动端切换功能区
             $('#rightone').attr('class', 'row rightone');
+            
+            //重置倒计时字体大小
+            $('#countdown-time-text').css('font-size','3rem');
         }
 
         if (window.innerWidth <= 990) {
@@ -397,6 +400,8 @@ window.addEventListener('load', function () {
             $('#box').css("display", "none");
             $('#row').css("display", "flex");
             $('#more').css("display", "flex");
+            //移动端倒计时字体
+            $('#countdown-time-text').css('font-size','2rem');
         }
     })
 })

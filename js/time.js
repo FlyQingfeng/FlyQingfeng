@@ -72,6 +72,9 @@ function init_life_time() {
             let countdown_min=parseInt((dt % (1000 * 60 * 60)) / (1000 * 60));
             let countdown_sec=parseInt((dt % (1000 * 60)) / 1000);
             $('#countdown_card #countdown #countdown-time-text').html(countdown_day+'天'+countdown_hour+'时'+countdown_min+'分'+countdown_sec+'秒');   
+            if (dt==0) {//放烟花
+                
+            }
         }
     }
     getAsideLifeTime();
