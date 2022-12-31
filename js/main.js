@@ -46,6 +46,7 @@ window.addEventListener('load', function () {
         //随机背景
         $('#bg').attr('src', `./img/background${1 + ~~(Math.random() * 21)}.webp`) //随机默认壁纸
     }
+    
     //用户欢迎
     setTimeout(function () {
         iziToast.show({
@@ -74,7 +75,6 @@ window.addEventListener('load', function () {
     if (Boolean(window.navigator.userAgent.match(/AppWebKit.*Mobile.*/))) {
         $('#g-pointer-2').css("display", "none");
     }
-
 }, false)
 
 setTimeout(function () {
@@ -433,7 +433,6 @@ document.oncontextmenu = function () {
     });
     return false;
 }
-
 //控制台输出
 //console.clear();
 let styleTitle1 = `

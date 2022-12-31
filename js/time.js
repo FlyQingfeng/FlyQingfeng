@@ -71,9 +71,13 @@ function init_life_time() {
             let countdown_hour=parseInt((dt % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let countdown_min=parseInt((dt % (1000 * 60 * 60)) / (1000 * 60));
             let countdown_sec=parseInt((dt % (1000 * 60)) / 1000);
-            $('#countdown_card #countdown #countdown-time-text').html(countdown_day+'天'+countdown_hour+'时'+countdown_min+'分'+countdown_sec+'秒');   
-            if (dt==0) {//放烟花
-                
+            function is0(params,char) {
+                return params == 0 ? "": params+char;
+            }
+            $('#countdown_card #countdown #countdown-time-text').html(is0(countdown_day,'天') +is0(countdown_hour,'时')+is0(countdown_min,'分')+is0(countdown_sec,'秒'));   
+            //$('#countdown_card #countdown #countdown-time-text').html(dt);   
+            if (dt<=1000) {//放烟花
+                location.replace("firework.html");
             }
         }
     }
